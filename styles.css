@@ -1,0 +1,19 @@
+body {
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 15px;
+}
+
+#services img {
+    max-width: 100%;
+}
+
+.modal-body input,
+.modal-body select {
+    width: 100%;
+    margin-bottom: 10px;
+}
