@@ -72,23 +72,22 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <form id="bookingForm">
+                <form id="bookingForm" class="was-validated">
                     <div class="form-group">
                         <label for="serviceName">Service</label>
                         <input type="text" class="form-control" id="serviceName" readonly>
                     </div>
                     <div class="form-group">
                         <label for="bookingDate">Date</label>
-                        <input type="date" class="form-control" id="bookingDate" required>
+                        <input type="date" class="form-control" id="bookingDate" onchange="validateDate()" required>
                     </div>
                     <div class="form-group">
                         <label for="bookingTime">Time</label>
-                        <input type="time" class="form-control" id="bookingTime" required>
+                        <input type="time" class="form-control" id="bookingTime" onchange="validateTime()" required>
                     </div>
                     <div class="form-group">
                         <label for="userName">Your Name</label>
-                        <input type="text" class="form-control" id="userName" required>
+                        <input type="text" class="form-control" id="userName" onchange="validateName()" required>
                     </div>
                     <div class="form-group">
                         <label for="userEmail">Your Email</label>
@@ -98,7 +97,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="bookService()">Book Now</button>
+                <button type="button" class="btn btn-primary">Book Now</button>
             </div>
         </div>
     </div>
@@ -116,6 +115,8 @@
     $('[data-target="#bookingModal"]').on('click', function() {
         var serviceName = $(this).data('service');
         $('#serviceName').val(serviceName);
+        validDate() //sets valid dates to select
+        validTime() //sets valid time inputs
     });
 </script>
 </body>
