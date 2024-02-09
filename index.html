@@ -72,26 +72,26 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="bookingForm" class="was-validated">
+                <form id="bookingForm">
                     <div class="form-group">
                         <label for="serviceName">Service</label>
                         <input type="text" class="form-control" id="serviceName" readonly>
                     </div>
                     <div class="form-group">
                         <label for="bookingDate">Date</label>
-                        <input type="date" class="form-control" id="bookingDate" onchange="validateDate()" required>
+                        <input type="date" class="form-control" id="bookingDate" oninput="validateDate()" required>
                     </div>
                     <div class="form-group">
                         <label for="bookingTime">Time</label>
-                        <input type="time" class="form-control" id="bookingTime" onchange="validateTime()" required>
+                        <input type="time" class="form-control" id="bookingTime" oninput="validateTime()" required>
                     </div>
                     <div class="form-group">
                         <label for="userName">Your Name</label>
-                        <input type="text" class="form-control" id="userName" onchange="validateName()" required>
+                        <input type="text" class="form-control" id="userName" oninput="validateName()" pattern="^[a-z A-Z]+$" required>
                     </div>
                     <div class="form-group">
                         <label for="userEmail">Your Email</label>
-                        <input type="email" class="form-control" id="userEmail" required>
+                        <input type="email" class="form-control" id="userEmail" oninput="validateEmail()" pattern="^([\w\.])*(\w@)(\w)*((.com)|(.ca)|(.co)|(.net)|(.org)|(.gov)|(.edu))$" required>
                     </div>
                 </form>
             </div>
