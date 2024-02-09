@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.btn-primary[data-target="#bookingModal"]').forEach(function (button) {
         button.addEventListener('click', function () {
             document.querySelector('#serviceName').value = this.getAttribute('data-service');
-            document.querySelector('#barberName').value = this.getAttribute('data-barber');
+            document.querySelector('#barber').value = this.getAttribute('data-barber');
             var isHaircutStyle = this.getAttribute('data-service').includes('Haircut');
             $('#serviceName').prop('readonly', isHaircutStyle);
         });
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function validateBookingForm() {
-        let barberName = document.querySelector('#barberName').value;
+        let barberName = document.querySelector('#barber').value;
         let serviceName = document.querySelector('#serviceName').value;
 
         document.getElementById("bookingForm").setAttribute("class", "was-validated")
@@ -38,14 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Successfully booked!")
             return true;
         } else {
-            alert('Please fill in all the required fields.');
             return false;
         }
     }
 
     function submitBookingForm() {
         let formData = {
-            barberName: document.querySelector('#barberName').value,
+            barberName: document.querySelector('#barber').value,
             serviceName: document.querySelector('#serviceName').value,
             date: document.querySelector('#bookingDate').value,
             time: document.querySelector('#bookingTime').value,
@@ -63,13 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
         $('#serviceName').val(serviceName);
 
         var barberName = $(this).data('barber');
-        $('#barberName').val(barberName);
+        $('#barber').val(barberName);
 
         var isHaircutStyle = serviceName.includes('Haircut');
         $('#serviceName').prop('readonly', isHaircutStyle);
 
         var isBarberName = barberName.includes('Barber');
-        $('#barberName').prop('readonly', isBarberName);
+        $('#barber').prop('readonly', isBarberName);
 
         var isStaffSection = $(this).closest('#staff').length > 0;
 
@@ -82,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
 
 
 function validDate() {
@@ -121,9 +119,9 @@ function validateDate() {
 
     if (bookedDate == "Invalid Date") { // date will be an "Invalid Date" if date passed into date constructer is null/invalid. Also if date is invalid (ex april 31 2024)
         message = "Please enter a valid date"
-    } else if (bookedDate < currentDate ) {
+    } else if (bookedDate < currentDate) {
         message = "Cannot book for past date. Please book a date in the future"
-    } else if (bookedDate > currentDate.setFullYear(currentDate.getFullYear()+1)) {
+    } else if (bookedDate > currentDate.setFullYear(currentDate.getFullYear() + 1)) {
         message = "Please select a date within a year of today!"
     } else {
         feedback.setAttribute("class", "valid-feedback")
@@ -169,7 +167,6 @@ function validateTime() {
 
     bookedDate.setHours(parseInt(splitTime[0]))
     bookedDate.setMinutes(parseInt(splitTime[1]))
-
 
 
     feedback.setAttribute("class", "valid-feedback")
