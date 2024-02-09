@@ -107,9 +107,37 @@ header {
     transition-delay: 0.3s;
 }
 .intro-text {
-    color: #ffffff; /* Set the text color to white */
-    font-size: 16px; /* Adjust the font size */
-    text-align: center; /* Center-align the text */
-    background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent black background */
-    padding: 10px; /* Add some padding to the text */
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px; 
 }
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li.closed {
+    color: #777;
+    font-style: italic;
+}
+
