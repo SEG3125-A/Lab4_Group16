@@ -1,5 +1,5 @@
 let openingTime = "09:30"
-let closingTime = "18:30"
+let closingTime = "19:30"
 let openHour = parseInt(openingTime.split(":")[0])
 let openMinute = parseInt(openingTime.split(":")[1])
 let closingHour = parseInt(closingTime.split(":")[0])
