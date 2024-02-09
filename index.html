@@ -201,7 +201,7 @@
             var barberName = $(this).data('barber');
             $('#barber').val(barberName);
             $('#barber option').prop('disabled', false); // Enable all options
-            $('#barber option[value="' + barberName + '"]').prop('disabled', true); // Disable selected barber
+            //$('#barber option[value="' + barberName + '"]').prop('disabled', true); // Disable selected barber
             $('#barber').prop('readonly', true); // Set the barber input field to readonly
 
             // Make other barber inputs readonly
